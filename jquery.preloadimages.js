@@ -1,4 +1,4 @@
-/*!
+/*
  * Copyright (c) 2014 Matt Cain (@CainCode)
  *
  * Permission is hereby granted, free of charge, to any person obtaining
@@ -27,6 +27,8 @@
     $.preloadimages = function(images, options) {
 
         var settings = $.extend({
+            // Using $.noop instead of null or undefined lets us call the callbacks without
+            // having to check that they are actually a function.
             each: $.noop,
             all: $.noop
         }, options),
@@ -42,19 +44,26 @@
                 
                 counter++;
 
+                // All image objects are passed to the callbacks, this is
+                // how you tell whether it was successfully loaded.
                 $this.data('loaded', 'error' === e.type ? false : true);
 
                 loaded[i] = image;
                 
                 settings.each($this);
 
+                // We use a counter because if the last image in the array loads
+                // first then loaded.length === images.length will be true, even
+                // though the rest of the array elements will be undefined.
                 if (counter === images.length) {
                     settings.all(loaded);
                 }
 
+                // Cancel the events in case anyone wants to reuse the image objects.
                 $(this).off('load error');
             });
 
+            // Set the src to start loading the image!
             image.src = url;
         });
     };
