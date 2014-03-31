@@ -7,7 +7,7 @@ Similar to [jquery.imgpreload](https://github.com/farinspace/jquery.imgpreload) 
 * passes JSHint
 * uses `on` and `off` instead of `bind` and `unbind`
 * gives you the results in the same order as the corresponding array of paths
-* only preloads arrays of image paths
+* only preloads arrays of image paths, doesn't offer the other method
 
 ## Usage
 
