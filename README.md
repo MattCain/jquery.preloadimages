@@ -1,9 +1,11 @@
 jQuery.preloadimages
 ====================
 
-A lightweight jQuery plugin for preloading an array of images.
+A lightweight jQuery plugin for preloading an array of image paths.
 
-Use like this:
+Similar to [jquery.imgpreload](https://github.com/farinspace/jquery.imgpreload) but lighter weight and only preloads arrays of image paths.
+
+## Usage
 
     var myImages = ['image1.png', 'image2.png', 'image3.png'];
 
@@ -25,5 +27,7 @@ Use like this:
             }
         }
     });
+
+MIT Licensed.
 
 See any simple improvements that can be made? Pull requests very welcome!
