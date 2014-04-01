@@ -9,6 +9,9 @@ Similar to [jquery.imgpreload](https://github.com/farinspace/jquery.imgpreload) 
 * gives you the results in the same order as the corresponding array of paths
 * only preloads arrays of image paths, doesn't offer the other method
 
+jQuery 1.7+ required.
+Tested in Firefox 25+, Chrome 33+, Safari 7+. I can see no reason why it wouldn't work on any post IE7 browser.
+
 ## Usage
 
 ```javascript
