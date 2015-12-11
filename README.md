@@ -6,7 +6,7 @@ A lightweight jQuery plugin for preloading an array of image paths.
 Similar to [jquery.imgpreload](https://github.com/farinspace/jquery.imgpreload) but:
 * passes JSHint
 * uses `on` and `off` instead of `bind` and `unbind`
-* gives you the results in the same order as the corresponding array of paths
+* gives you the results in the same order as the array of paths that you passed in
 * only preloads arrays of image paths, doesn't offer the other method
 
 jQuery 1.7+ required.
@@ -20,6 +20,7 @@ See any simple improvements that can be made? Pull requests very welcome!
 var myImages = ['image1.png', 'image2.png', 'image3.png'];
 
 $.preloadimages(myImages, {
+    // The each callback is called as soon as an image finishes loadsing, not in any enforced order.
     each: function(image) {
         // image is an image object, you can turn it into a jQuery object like this:
         var $image = $(image);
@@ -28,7 +29,7 @@ $.preloadimages(myImages, {
         var success = $image.data('loaded');
     },
     all: function(images) {
-        // images is an array of images objects. The images are in the same order as the corresponding URL's you passed in.
+        // images is an array of images objects. The images are in the same order as the URL's you passed in.
         for (var i = 0; i < images.length; i++) {
             console.log( images[i].src.indexOf(myImages[i]) !== -1 ); // always true
 
@@ -44,7 +45,7 @@ Bower installation is available:
 
     bower install jquery.preloadimages
 
-Or just grab the js straight from here.
+Or download the js straight from github.
 
 ## License
 
