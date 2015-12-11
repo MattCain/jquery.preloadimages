@@ -6,7 +6,7 @@
   "authors": [
     "Matt Cain <matt@cainmedia.com>"
   ],
-  "description": "jQuery plugin to preload an array of image paths",
+  "description": "jQuery plugin to preload images from an array of image paths",
   "keywords": [
     "preload",
     "images"
